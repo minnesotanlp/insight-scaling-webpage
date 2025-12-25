@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaling Unverifiable Reward - University of Minnesota NLP</title>
+    <meta name="description" content="Research on scaling unverifiable reward models">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .author-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .author-photo:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+        .author-card {
+            transition: transform 0.3s ease;
+        }
+        .author-card:hover {
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #2563eb, #14b8a6);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .logo-image {
+            max-height: 80px;
+            width: auto;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        .comparison-table thead th {
+            background-color: #1f2937;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+        .comparison-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .comparison-table tbody tr:hover {
+            background-color: #f3f4f6;
+        }
+        .comparison-table td:first-child {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header Section -->
+    <div class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+            <div class="logo-container flex-wrap justify-center md:justify-start">
+                <img src="img/University_of_Minnesota_Logo.png" alt="University of Minnesota" class="logo-image">
+                <img src="img/UMN_NLP_logo_final_circle.png" alt="UMN NLP Lab" class="logo-image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-b from-white to-gray-50 py-12 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-8 text-gray-900">
+                    Scaling Unverifiable Rewards: A Case Study on Visual Insights
+                </h1>
+
+                <!-- Authors Section -->
+                <div class="text-lg md:text-xl leading-relaxed mb-3">
+                    <a href="https://shuyugan.github.io/" target="_blank" class="text-blue-600 hover:underline">Shuyu Gan</a>,
+                    <a href="https://jimtmooney.github.io/" target="_blank" class="text-blue-600 hover:underline">James Mooney</a>,
+                    <a href="https://ppphhhleo.github.io/" target="_blank" class="text-blue-600 hover:underline">Pan Hao</a>,
+                    <a href="https://github.com/Nangxxxxx" target="_blank" class="text-blue-600 hover:underline">Renxiang Wang</a>,<br class="md:hidden">
+                    <a href="https://people.ece.umn.edu/~mhong/mingyi.html" target="_blank" class="text-blue-600 hover:underline">Mingyi Hong</a>,
+                    <a href="https://qianwen.info/" target="_blank" class="text-blue-600 hover:underline">Qianwen Wang</a>,
+                    <a href="https://dykang.github.io/" target="_blank" class="text-blue-600 hover:underline">Dongyeop Kang</a>
+                </div>
+                <div class="text-base text-gray-600 mb-8">
+                    University of Minnesota
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://openreview.net/forum?id=3eTVebmmn8&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3Daclweb.org%2FACL%2FARR%2F2025%2FOctober%2FAuthors%23your-submissions)"
+                       target="_blank"
+                       class="bg-gray-900 hover:bg-gray-700 text-white px-6 py-2 rounded font-medium inline-flex items-center gap-2 transition">
+                        <i class="fas fa-file-alt"></i>
+                        Paper
+                    </a>
+                    <a href="https://github.com/minnesotanlp/insight-scaling"
+                       target="_blank"
+                       class="bg-gray-900 hover:bg-gray-700 text-white px-6 py-2 rounded font-medium inline-flex items-center gap-2 transition">
+                        <i class="fab fa-github"></i>
+                        Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Abstract Section -->
+    <div class="bg-gray-50 py-12 md:py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Abstract</h2>
+            <div class="bg-white rounded-lg shadow-sm p-8 text-gray-700 leading-relaxed text-justify">
+                <p>
+                    Large Language Model (LLM) agents can increasingly automate complex reasoning through Test-Time Scaling (TTS), iterative refinement guided by reward signals.
+                    However, many real-world tasks involve multi-stage pipeline whose final outcomes lack verifiable rewards or sufficient data to train robust reward models, making judge-based refinement prone to accumulate error over stages.
+                    We propose <strong>Selective TTS</strong>, a <em>process-based refinement</em> framework that scales inference across different stages in multi-agent pipeline, instead of repeated refinement over time by prior work.
+                    By distributing compute across stages and pruning low-quality branches early using process-specific judges, Selective TTS mitigates the judge drift and stabilizes refinement.
+                    Grounded in the data science pipeline, we build an end-to-end multi-agent pipeline for generating visually insightful charts and report of given dataset, and design a reliable LLM-based judge model, aligned with human experts (Kendall's τ=0.55).
+                    Our proposed selective TTS then improves insight quality under a fixed compute budget, increasing mean scores from <strong>61.64 to 65.99</strong> while reducing variance.
+                    We hope our findings serve as the first step toward to scaling complex, open-ended tasks with unverifiable rewards, such as scientific discovery and story generation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Method Section -->
+    <div class="bg-white py-12 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Proposed Method</h2>
+
+            <!-- Method Introduction -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="bg-gray-50 rounded-lg shadow-sm p-8 text-gray-700 leading-relaxed text-justify">
+                    <p>
+                        We investigate whether unverifiable rewards in visual insight generation can be operationalized and improved via test-time scaling. To this end, we build a simple multi-agent pipeline that produces insightful reports from raw data, together with a human-aligned LLM-based judge to evaluate report quality. Using this judging signal, we then extend our work to see how far we may scale quality under a fixed compute budget.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pipeline Image -->
+            <div class="max-w-5xl mx-auto mb-8">
+                <img src="img/pipeline_page-0001.jpg" alt="Multi-agent Data Analysis Pipeline" class="w-full rounded-lg shadow-lg">
+            </div>
+
+            <!-- Method Description -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="bg-gray-50 rounded-lg shadow-sm p-8 text-gray-700 leading-relaxed text-justify">
+                    <p>
+                        Our multi-agent data analysis pipeline aims to answer two key questions: <strong>(RQ1)</strong> whether judge-guided scaling can align with human experts, and <strong>(RQ2)</strong> how much performance can be further scaled within the same compute budget using the proposed selective TTS.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pipeline Detail Image -->
+            <div class="max-w-5xl mx-auto mb-8">
+                <img src="img/fig1.png" alt="Pipeline Architecture" class="w-full rounded-lg shadow-lg">
+            </div>
+
+            <!-- Pipeline Description -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="bg-gray-50 rounded-lg shadow-sm p-8 text-gray-700 leading-relaxed text-justify">
+                    <p>
+                        In details, our pipeline comprises four stages: Data Profiling, Visualization, Insight Generation, and Judger Verification, each implemented as an agent with stage-specific prompts, powered by an LLM or a vision-language model (VLM). The overall design is inspired by work by <a href="https://visxgenai.github.io/subs-2025/7597/7597-doc.pdf" target="_blank" class="text-blue-600 hover:underline">Gan et al. (2025)</a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- RQ1: Judge Alignment -->
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">RQ1: Judge Alignment with Human Experts</h3>
+                <div class="bg-gray-50 rounded-lg shadow-sm p-8 text-gray-700 leading-relaxed text-justify">
+                    <p class="mb-4">
+                        To address <strong>RQ1</strong> (whether judge-guided scaling can align with human experts), we designed three judges with varying degrees of strictness to evaluate insight quality. Each judge employs different evaluation criteria and reasoning processes, ranging from surface-level readability checks to deep analytical assessments. We conducted small-scale scaling experiments on two datasets: <a href="https://www.vispubdata.org/" target="_blank" class="text-blue-600 hover:underline">VIS Publication</a> and <a href="https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset" target="_blank" class="text-blue-600 hover:underline">Medical Insurance</a>. Below are the prompt design snippets for the three judges:
+                    </p>
+
+                    <!-- Judge Characteristics Table -->
+                    <div class="overflow-x-auto mb-6">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Easy Judge</th>
+                                    <th>Moderate Judge</th>
+                                    <th>Harsh Judge</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>Task:</strong> objective evaluation using chart-only evidence.<br><br>
+                                        <strong>Traits:</strong> Readability; OnTopic; TrendAlignment.<br><br>
+                                        <strong>Process:</strong> direct observation and scoring.<br><br>
+                                        <strong>Scoring:</strong> integers 0–100 per trait.<br><br>
+                                        <strong>Output:</strong> JSON {scores, evidence, conclusion}.
+                                    </td>
+                                    <td>
+                                        <strong>Task:</strong> objective evaluation using chart-only evidence.<br><br>
+                                        <strong>Traits:</strong> Correctness; Specificity; InterpretiveValue.<br><br>
+                                        <strong>Process:</strong> identify chart elements and rate insight clarity.<br><br>
+                                        <strong>Scoring:</strong> integers 0–100 per trait.<br><br>
+                                        <strong>Output:</strong> JSON {scores, evidence, conclusion}.
+                                    </td>
+                                    <td>
+                                        <strong>Task:</strong> objective evaluation using chart-only evidence.<br><br>
+                                        <strong>Traits:</strong> Correctness and Factuality; Specificity and Traceability; Insightfulness and Depth; So-what quality.<br><br>
+                                        <strong>CoT Process:</strong> observe chart → decompose insight → map evidence → score → conclude.<br><br>
+                                        <strong>Scoring:</strong> integers 0–100 per trait.<br><br>
+                                        <strong>Output:</strong> JSON {scores, evidence, conclusion}.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mb-4">
+                        For each dataset, we generated approximately 1,500 reports through iterative refinement, with all three judges scoring every generated report. This resulted in three complete scoring trajectories per dataset, each reflecting a different judging philosophy. To efficiently gather human preferences without annotating all reports, we employed <strong>vertical sampling</strong>: at five key quantile points (0%, 25%, 50%, 75%, 100%) along each judge's score distribution, we extracted the corresponding reports and created pairwise comparisons across the three judges. This sampling strategy yielded 30 systematically selected pairs (5 quantiles × 2 datasets × 3 judge pairs) for expert human annotation.
+                    </p>
+                    <p class="mb-6">
+                        We collected preferences from four expert annotators who evaluated which report in each pair demonstrated higher insight quality. To measure judge-human alignment, we computed rank correlation metrics including <strong>Kendall's τ</strong> and <strong>Spearman's ρ</strong>, along with inter-annotator agreement measured by <strong>Kendall's W</strong>. The evaluation results are summarized below:
+                    </p>
+
+                    <!-- Judge Alignment Results Table -->
+                    <div class="overflow-x-auto">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Judger</th>
+                                    <th colspan="3">VIS Publication Dataset</th>
+                                    <th colspan="3">Medical Insurance Dataset</th>
+                                </tr>
+                                <tr>
+                                    <th>Kendall's τ (↑)</th>
+                                    <th>Spearman's ρ (↑)</th>
+                                    <th>Kendall's W (↑)</th>
+                                    <th>Kendall's τ (↑)</th>
+                                    <th>Spearman's ρ (↑)</th>
+                                    <th>Kendall's W (↑)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Easy</td>
+                                    <td>0.40±0.24</td>
+                                    <td>0.53±0.24</td>
+                                    <td><strong>0.64</strong></td>
+                                    <td>0.55±0.30</td>
+                                    <td>0.62±0.26</td>
+                                    <td>0.54</td>
+                                </tr>
+                                <tr>
+                                    <td>Moderate</td>
+                                    <td>0.45±0.17</td>
+                                    <td>0.55±0.23</td>
+                                    <td>0.51</td>
+                                    <td>0.40±0.00</td>
+                                    <td>0.55±0.08</td>
+                                    <td><strong>0.65</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Harsh</strong></td>
+                                    <td><strong>0.55±0.30</strong></td>
+                                    <td><strong>0.60±0.37</strong></td>
+                                    <td>0.59</td>
+                                    <td><strong>0.65±0.30</strong></td>
+                                    <td><strong>0.72±0.27</strong></td>
+                                    <td><strong>0.64</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="mt-6">
+                        The results demonstrate that the <strong>harsh judge</strong> consistently achieves the strongest alignment with human expert preferences across both datasets, with Kendall's τ reaching <strong>0.55</strong> on VIS Publication and <strong>0.65</strong> on Medical Insurance. We therefore adopt the harsh judge as our pseudo ground-truth for subsequent scaling experiments in RQ2.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 University of Minnesota NLP Lab. All rights reserved.</p>
+            <div class="mt-4 flex justify-center gap-6">
+                <a href="https://github.com/minnesotanlp" target="_blank" class="hover:text-blue-600 transition">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
