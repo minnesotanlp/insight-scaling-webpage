@@ -26,8 +26,8 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         .author-photo {
-            width: 80px;
-            height: 80px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -109,18 +109,46 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-8 text-gray-900">
-                    Scaling Unverifiable Rewards: A Case Study on Visual Insights
+                    Towards Scaling Unverifiable Rewards: A Case Study on Visual Insights
                 </h1>
 
                 <!-- Authors Section -->
-                <div class="text-lg md:text-xl leading-relaxed mb-3">
-                    <a href="https://shuyugan.github.io/" target="_blank" class="text-blue-600 hover:underline">Shuyu Gan</a>,
-                    <a href="https://jimtmooney.github.io/" target="_blank" class="text-blue-600 hover:underline">James Mooney</a>,
-                    <a href="https://ppphhhleo.github.io/" target="_blank" class="text-blue-600 hover:underline">Pan Hao</a>,
-                    <a href="https://github.com/Nangxxxxx" target="_blank" class="text-blue-600 hover:underline">Renxiang Wang</a>,<br class="md:hidden">
-                    <a href="https://people.ece.umn.edu/~mhong/mingyi.html" target="_blank" class="text-blue-600 hover:underline">Mingyi Hong</a>,
-                    <a href="https://qianwen.info/" target="_blank" class="text-blue-600 hover:underline">Qianwen Wang</a>,
-                    <a href="https://dykang.github.io/" target="_blank" class="text-blue-600 hover:underline">Dongyeop Kang</a>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8 mb-6">
+                    <!-- Shuyu Gan -->
+                    <a href="https://shuyugan.github.io/" target="_blank" class="author-card flex flex-col items-center text-center">
+                        <img src="img/profiles/shuyu.jpg" alt="Shuyu Gan" class="author-photo mb-2">
+                        <span class="text-gray-800 font-medium text-sm">Shuyu Gan</span>
+                    </a>
+                    <!-- James Mooney -->
+                    <a href="https://jimtmooney.github.io/" target="_blank" class="author-card flex flex-col items-center text-center">
+                        <img src="img/profiles/james.jpeg" alt="James Mooney" class="author-photo mb-2">
+                        <span class="text-gray-800 font-medium text-sm">James Mooney</span>
+                    </a>
+                    <!-- Pan Hao -->
+                    <a href="https://ppphhhleo.github.io/" target="_blank" class="author-card flex flex-col items-center text-center">
+                        <img src="img/profiles/pan.jpg" alt="Pan Hao" class="author-photo mb-2">
+                        <span class="text-gray-800 font-medium text-sm">Pan Hao</span>
+                    </a>
+                    <!-- Renxiang Wang -->
+                    <a href="https://github.com/Nangxxxxx" target="_blank" class="author-card flex flex-col items-center text-center">
+                        <img src="img/profiles/renxiang.jpg" alt="Renxiang Wang" class="author-photo mb-2">
+                        <span class="text-gray-800 font-medium text-sm">Renxiang Wang</span>
+                    </a>
+                    <!-- Mingyi Hong -->
+                    <a href="https://people.ece.umn.edu/~mhong/mingyi.html" target="_blank" class="author-card flex flex-col items-center text-center">
+                        <img src="img/profiles/mingyi.jpg" alt="Mingyi Hong" class="author-photo mb-2">
+                        <span class="text-gray-800 font-medium text-sm">Mingyi Hong</span>
+                    </a>
+                    <!-- Qianwen Wang -->
+                    <a href="https://qianwen.info/" target="_blank" class="author-card flex flex-col items-center text-center">
+                        <img src="img/profiles/qianwen.jpg" alt="Qianwen Wang" class="author-photo mb-2">
+                        <span class="text-gray-800 font-medium text-sm">Qianwen Wang</span>
+                    </a>
+                    <!-- Dongyeop Kang -->
+                    <a href="https://dykang.github.io/" target="_blank" class="author-card flex flex-col items-center text-center">
+                        <img src="img/profiles/dykang2.jpg" alt="Dongyeop Kang" class="author-photo mb-2">
+                        <span class="text-gray-800 font-medium text-sm">Dongyeop Kang</span>
+                    </a>
                 </div>
                 <div class="text-base text-gray-600 mb-8">
                     University of Minnesota
@@ -156,7 +184,7 @@
                     We propose <strong>Selective TTS</strong>, a <em>process-based refinement</em> framework that scales inference across different stages in multi-agent pipeline, instead of repeated refinement over time by prior work.
                     By distributing compute across stages and pruning low-quality branches early using process-specific judges, Selective TTS mitigates the judge drift and stabilizes refinement.
                     Grounded in the data science pipeline, we build an end-to-end multi-agent pipeline for generating visually insightful charts and report of given dataset, and design a reliable LLM-based judge model, aligned with human experts (Kendall's τ=0.55).
-                    Our proposed selective TTS then improves insight quality under a fixed compute budget, increasing mean scores from <strong>61.64 to 65.99</strong> while reducing variance.
+                    Our proposed selective TTS then improves insight quality under a fixed compute budget, increasing mean scores from <strong>61.64 to 65.86</strong> while reducing variance.
                     We hope our findings serve as the first step toward to scaling complex, open-ended tasks with unverifiable rewards, such as scientific discovery and story generation.
                 </p>
             </div>
@@ -205,6 +233,286 @@
                 </div>
             </div>
 
+            <!-- Report Examples with Tabs -->
+            <div class="max-w-6xl mx-auto mb-16">
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">Generated Report Examples</h3>
+                <p class="mb-6 text-gray-700 text-sm">
+                    Below we showcase high-quality insights generated by our pipeline across four diverse datasets, demonstrating consistent quality and diverse analytical perspectives.
+                </p>
+
+                <!-- Tab Navigation -->
+                <div class="flex flex-wrap border-b border-gray-200 mb-6">
+                    <button onclick="showDatasetTab('insurance')" id="tab-insurance" class="dataset-tab px-4 py-2 text-sm font-medium border-b-2 border-blue-500 text-blue-600">
+                        Medical Insurance
+                    </button>
+                    <button onclick="showDatasetTab('diabetes')" id="tab-diabetes" class="dataset-tab px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        Diabetes
+                    </button>
+                    <button onclick="showDatasetTab('shopping')" id="tab-shopping" class="dataset-tab px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        Shopping Behavior
+                    </button>
+                    <button onclick="showDatasetTab('happiness')" id="tab-happiness" class="dataset-tab px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        World Happiness
+                    </button>
+                </div>
+
+                <style>
+                    .dataset-tab-content { display: none; }
+                    .dataset-tab-content.active { display: block; }
+                    .tab-example-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 16px;
+                    }
+                    .tab-example-card {
+                        border: 1px solid #e5e7eb;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        background: #fff;
+                        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                        transition: transform 0.2s, box-shadow 0.2s;
+                    }
+                    .tab-example-card:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+                    }
+                    .tab-card-content {
+                        display: flex;
+                        flex-direction: row;
+                    }
+                    .tab-image-container {
+                        flex: 0 0 40%;
+                        padding: 10px;
+                        background: #f9fafb;
+                    }
+                    .tab-image-container img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        border-radius: 4px;
+                    }
+                    .tab-text-container {
+                        flex: 1;
+                        padding: 10px 14px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .tab-text-container p {
+                        margin: 0;
+                        font-size: 12px;
+                        line-height: 1.5;
+                        color: #4b5563;
+                        overflow-y: auto;
+                        max-height: 160px;
+                    }
+                    @media (max-width: 900px) {
+                        .tab-example-grid { grid-template-columns: 1fr; }
+                    }
+                    @media (max-width: 640px) {
+                        .tab-card-content { flex-direction: column; }
+                        .tab-image-container { flex: 0 0 auto; width: 100%; }
+                    }
+                </style>
+
+                <!-- Medical Insurance Tab -->
+                <div id="content-insurance" class="dataset-tab-content active">
+                    <p class="mb-4 text-gray-600 text-sm italic">
+                        The <a href="https://www.kaggle.com/datasets/mosapabdelhany/medical-insurance-cost" target="_blank" class="text-blue-600 hover:underline">Medical Insurance dataset</a> contains patient attributes (age, BMI, smoking status) and insurance charges.
+                    </p>
+                    <div class="tab-example-grid">
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Insurance/top1.png" alt="Insurance Insight 1"></div>
+                                <div class="tab-text-container"><p>Children show negligible correlation with both age (~0.04) and BMI (~0.01), reinforcing the notion that family size is not a dominant factor in determining medical charges compared to age or BMI. For healthcare administrators, understanding these independence relationships is critical when designing bundled payment models or risk-adjustment mechanisms.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Insurance/top8.png" alt="Insurance Insight 8"></div>
+                                <div class="tab-text-container"><p>The age distribution of insured individuals is skewed towards younger demographics, particularly those in their early twenties, where frequencies reach their peak (~160). This raises concerns regarding the potential imbalance in risk pooling, as older individuals are underrepresented in the insured population.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Insurance/top31.png" alt="Insurance Insight 31"></div>
+                                <div class="tab-text-container"><p>The chart reveals a significant difference in the relationship between BMI and medical charges for smokers versus non-smokers. Smokers experience a marked increase in charges as BMI rises, suggesting that both smoking status and BMI have compounding effects on healthcare costs.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Insurance/top36.png" alt="Insurance Insight 36"></div>
+                                <div class="tab-text-container"><p>The chart reveals a complex relationship between age and medical charges. Beyond 40 years, the spread widens significantly, particularly around the 50-60 age range, where there is a marked cluster of higher charges, suggesting health complications may become more common.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Insurance/top42.png" alt="Insurance Insight 42"></div>
+                                <div class="tab-text-container"><p>The pronounced skewness in the distribution of medical charges for smokers suggests that smoking may disproportionately impact healthcare costs for a smaller subset of individuals. The long right tail indicates extremely high costs due to smoking-related complications.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Insurance/top57.png" alt="Insurance Insight 57"></div>
+                                <div class="tab-text-container"><p>There is a significant upward trend in medical charges as age increases, suggesting that healthcare costs rise systematically with age. This insight suggests that older individuals may require more intensive or frequent medical interventions.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diabetes Tab -->
+                <div id="content-diabetes" class="dataset-tab-content">
+                    <p class="mb-4 text-gray-600 text-sm italic">
+                        The <a href="https://www.kaggle.com/datasets/akshaydattatraykhare/diabetes-dataset" target="_blank" class="text-blue-600 hover:underline">Diabetes dataset</a> includes clinical measurements (glucose, blood pressure, insulin, BMI) and diabetes status indicators.
+                    </p>
+                    <div class="tab-example-grid">
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/diabetes/top1.png" alt="Diabetes Insight 1"></div>
+                                <div class="tab-text-container"><p>The DiabetesPedigreeFunction exhibits a notably low correlation with most features, including Glucose (0.14) and BMI (0.14). This may suggest that environmental or lifestyle factors play a more dominant role than genetics in modulating these traits.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/diabetes/top20.png" alt="Diabetes Insight 20"></div>
+                                <div class="tab-text-container"><p>The sharp increase in insulin levels observed in Outcome 1 around age 60 suggests a significant metabolic shift that could indicate the onset of severe diabetic complications. This peak, exceeding 400 units, stands out as an anomaly.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/diabetes/top28.png" alt="Diabetes Insight 28"></div>
+                                <div class="tab-text-container"><p>The chart illustrates a substantial overlap in insulin levels between outcomes across various age groups. The lack of clear differentiation between outcomes later in life may suggest that age outweighs other distinguishing factors.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/diabetes/top35.png" alt="Diabetes Insight 35"></div>
+                                <div class="tab-text-container"><p>The scatter plot reveals a positive correlation between BMI and Glucose levels. This insight implies that interventions targeting weight management may play a crucial role in managing glucose levels.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/diabetes/top37.png" alt="Diabetes Insight 37"></div>
+                                <div class="tab-text-container"><p>Glucose shows moderate correlations with several features: BMI (0.22), BloodPressure (0.15), and Insulin (0.33). This pattern indicates that glucose levels are influenced by a combination of body composition and metabolic activity.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/diabetes/top48.png" alt="Diabetes Insight 48"></div>
+                                <div class="tab-text-container"><p>The relationship between glucose and insulin levels across the outcomes reveals an indirect linkage tied to metabolic health. The high insulin levels in outcome 1 imply compensatory insulin secretion possibly to counteract insulin resistance.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shopping Behavior Tab -->
+                <div id="content-shopping" class="dataset-tab-content">
+                    <p class="mb-4 text-gray-600 text-sm italic">
+                        The <a href="https://www.kaggle.com/datasets/ayeshausmani/customer-shopping-behavior-dataset" target="_blank" class="text-blue-600 hover:underline">Customer Shopping Behavior dataset</a> captures retail transaction data including product categories and seasonal patterns.
+                    </p>
+                    <div class="tab-example-grid">
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Shopping/top7.png" alt="Shopping Insight 7"></div>
+                                <div class="tab-text-container"><p>Clothing demonstrates a cyclical trend in popularity across seasons, peaking in Spring and rebounding in Winter. Retailers may consider increasing inventory and marketing efforts during Spring and Winter to capitalize on peak demand.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Shopping/top9.png" alt="Shopping Insight 9"></div>
+                                <div class="tab-text-container"><p>Footwear demand exhibits noticeable seasonal variation, showing higher purchases in Summer (160) and Spring (163), compared to Fall (136) and Winter (140). Retailers might consider adjusting inventory levels during warmer months.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Shopping/top11.png" alt="Shopping Insight 11"></div>
+                                <div class="tab-text-container"><p>Summer has the lowest average review rating at approximately 3.71, suggesting it might be the most challenging season for maintaining customer satisfaction. Actions like implementing summer-exclusive features could help lift ratings.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Shopping/top35.png" alt="Shopping Insight 35"></div>
+                                <div class="tab-text-container"><p>The payment method landscape indicates a competitive environment among the top four methods—Credit Card, PayPal, Cash, and Debit Card—all contributing approximately 17%-18% of total sales.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Shopping/top46.png" alt="Shopping Insight 46"></div>
+                                <div class="tab-text-container"><p>The seasonal sales trend reveals a significant peak during Fall at approximately $60,000. Retailers could leverage this insight by intensifying marketing campaigns ahead of Fall.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Shopping/top49.png" alt="Shopping Insight 49"></div>
+                                <div class="tab-text-container"><p>Bank transfers exhibit a periodic pattern, with usage peaking during the bi-weekly and quarterly purchase intervals (88 and 109 respectively). Businesses could leverage this by offering bank transfer discounts.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- World Happiness Tab -->
+                <div id="content-happiness" class="dataset-tab-content">
+                    <p class="mb-4 text-gray-600 text-sm italic">
+                        The <a href="https://www.kaggle.com/datasets/usamabuttar/world-happiness-report-2005-present" target="_blank" class="text-blue-600 hover:underline">World Happiness Report dataset</a> aggregates country-level indicators including GDP, social support, and life expectancy.
+                    </p>
+                    <div class="tab-example-grid">
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Happiness/top3.png" alt="Happiness Insight 3"></div>
+                                <div class="tab-text-container"><p>The heatmap reveals a strong positive correlation between 'Log GDP Per Capita' and both 'Social Support' (0.68) and 'Healthy Life Expectancy' (0.82). However, the lack of significant correlation with 'Generosity' suggests wealth alone does not translate to increased generosity.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Happiness/top5.png" alt="Happiness Insight 5"></div>
+                                <div class="tab-text-container"><p>There appears to be a diminishing marginal return effect of GDP on happiness at higher levels. This observation aligns with the 'Easterlin Paradox,' which posits that beyond a certain affluence level, economic gains do not substantially improve well-being.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Happiness/top7.png" alt="Happiness Insight 7"></div>
+                                <div class="tab-text-container"><p>There is a negative correlation between perceptions of corruption and confidence in the national government. Policymakers should focus on implementing transparent anti-corruption measures to restore public trust.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Happiness/top30.png" alt="Happiness Insight 30"></div>
+                                <div class="tab-text-container"><p>The data demonstrates a non-linear drop in confidence as perceptions of corruption rise. The rate of decline accelerates significantly once perceptions exceed 0.5, suggesting a threshold for public tolerance.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Happiness/top38.png" alt="Happiness Insight 38"></div>
+                                <div class="tab-text-container"><p>The Negative Affect distribution exhibits a steep decline in frequency beyond a score of 0.3, indicating a potential 'ceiling effect' for negative affect at higher scores. Public health campaigns might aim to guide individuals above this threshold.</p></div>
+                            </div>
+                        </div>
+                        <div class="tab-example-card">
+                            <div class="tab-card-content">
+                                <div class="tab-image-container"><img src="img/Happiness/top54.png" alt="Happiness Insight 54"></div>
+                                <div class="tab-text-container"><p>The correlation matrix shows that 'Social Support' has moderately strong positive correlations with 'Life Ladder' (0.72) and 'Log GDP Per Capita' (0.68), suggesting social cohesion contributes to both well-being and economic prosperity.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function showDatasetTab(dataset) {
+                        // Hide all content
+                        document.querySelectorAll('.dataset-tab-content').forEach(el => el.classList.remove('active'));
+                        // Remove active state from all tabs
+                        document.querySelectorAll('.dataset-tab').forEach(el => {
+                            el.classList.remove('border-blue-500', 'text-blue-600');
+                            el.classList.add('border-transparent', 'text-gray-500');
+                        });
+                        // Show selected content
+                        document.getElementById('content-' + dataset).classList.add('active');
+                        // Activate selected tab
+                        const activeTab = document.getElementById('tab-' + dataset);
+                        activeTab.classList.remove('border-transparent', 'text-gray-500');
+                        activeTab.classList.add('border-blue-500', 'text-blue-600');
+                    }
+                </script>
+            </div>
+
             <!-- RQ1: Judge Alignment -->
             <div class="max-w-4xl mx-auto">
                 <h3 class="text-2xl font-bold mb-6 text-gray-900">RQ1: Judge Alignment with Human Experts</h3>
@@ -251,7 +559,7 @@
                         </table>
                     </div>
                     <p class="mb-4">
-                        For each dataset, we generated approximately 1,500 reports through iterative refinement, with all three judges scoring every generated report. This resulted in three complete scoring trajectories per dataset, each reflecting a different judging philosophy. To efficiently gather human preferences without annotating all reports, we employed <strong>vertical sampling</strong>: at five key quantile points (0%, 25%, 50%, 75%, 100%) along each judge's score distribution, we extracted the corresponding reports and created pairwise comparisons across the three judges. This sampling strategy yielded 30 systematically selected pairs (5 quantiles × 2 datasets × 3 judge pairs) for expert human annotation.
+                        Using <strong>Qwen-2.5-VL-32B-Instruct</strong> as the generation backbone, we ran the full pipeline with test-time branching to produce final reports, each containing a visualization paired with its corresponding textual insight. To ensure robust judge design, we employed <strong>GPT-4o</strong> as a strong judging backbone throughout the human-alignment study, which helps minimize annotation bias arising from model-level limitations. For stability, each report was evaluated by the same judger three independent times, and the final score was obtained by <strong>averaging these repeated evaluations (majority-voting)</strong>. We evaluated two representative tabular datasets—VIS Publication and Medical Insurance—each yielding approximately 1,500 final reports. To efficiently gather human preferences without annotating all reports, we employed <strong>vertical sampling</strong>: at five key quantile points (0%, 25%, 50%, 75%, 100%) along each judge's score distribution, we extracted the corresponding reports and created pairwise comparisons across the three judges. This sampling strategy yielded 30 systematically selected pairs (5 quantiles × 2 datasets × 3 judge pairs) for expert human annotation.
                     </p>
                     <p class="mb-6">
                         We collected preferences from four expert annotators who evaluated which report in each pair demonstrated higher insight quality. To measure judge-human alignment, we computed rank correlation metrics including <strong>Kendall's τ</strong> and <strong>Spearman's ρ</strong>, along with inter-annotator agreement measured by <strong>Kendall's W</strong>. The evaluation results are summarized below:
@@ -328,16 +636,16 @@
 
                     <h4 class="text-xl font-semibold mb-4 text-gray-800">Stage-wise Selective TTS</h4>
                     <p class="mb-4">
-                        The core idea of Selective TTS is to generate multiple candidate outputs at each stage of the pipeline, evaluate them using <strong>stage-local evaluators</strong>, and prune low-quality branches before they propagate to downstream stages. For each stage \(s \in \{\text{meta-reports}, \text{directions}, \text{insights}\}\), we define a branching factor \(b_s\) and a pruning ratio \(\rho \in (0, 1)\). At each stage, we generate \(b_s\) candidates, evaluate them using a stage-specific judge, and retain only the top \(n'_s = \max(1, \lceil(1-\rho) \cdot b_s\rceil)\) candidates for the next stage. This selective pruning strategy prevents error accumulation by eliminating poor-quality intermediate outputs early in the pipeline.
+                        The core idea of Selective TTS is to generate multiple candidate outputs at each stage of the pipeline, evaluate them using <strong>stage-local evaluators</strong>, and prune low-quality branches before they propagate to downstream stages. For each stage s in <strong>metadata reports generation</strong>, <strong>visualization directions generation</strong>, <strong>insights generation</strong>, we define a branching factor \(b_s\) and a pruning ratio \(\rho \in (0, 1)\). At each stage, we generate \(b_s\) candidates, evaluate them using a stage-specific judge, and retain only the top \(n'_s = \max(1, \lceil(1-\rho) \cdot b_s\rceil)\) candidates for the next stage. This selective pruning strategy prevents error accumulation by eliminating poor-quality intermediate outputs early in the pipeline.
                     </p>
 
                     <p class="mb-6">
-                        For our four-stage pipeline (Data Profiling → Visualization → Insight Generation → Judge Verification), we employ the following pruning schedule: starting with 1 initial input (the raw dataset), we generate \(b_s\) metadata reports and prune to retain \(n'_s\) reports. For each retained report, we generate \(b_s\) visualization directions and prune to \(n'_s\) directions. Each direction then goes through chart rendering with quality verification. Let \(p_v \in [0,1]\) denote the chart verification pass probability—the expected rate at which generated charts pass quality checks. Among \(n'_s \cdot n'_s\) attempted visualizations, we expect \(p_v n'_s \cdot n'_s\) verified charts to pass. Finally, for each verified chart, we generate \(b_s\) insights and prune to \(n'_s\) insights for final judge verification. This results in a branching tree structure where high-quality paths are preserved and low-quality branches are eliminated at each stage.
+                        For our four-stage pipeline (Data Profiling → Visualization → Insight Generation → Judge Verification), we employ the following pruning schedule: starting with 1 initial input (the raw dataset), we generate \(b_s\) metadata reports and prune to retain \(n'_s\) reports. For each retained report, we generate \(b_s\) visualization directions and prune to \(n'_s\) directions. Each direction then goes through chart rendering with quality verification. Let \(p_v \in [0,1]\) denote the chart verification pass probability. This quantity represents the expected rate at which generated charts pass quality checks. Among \(n'_s \cdot n'_s\) attempted visualizations, we expect \(p_v n'_s \cdot n'_s\) verified charts to pass. Finally, for each verified chart, we generate \(b_s\) insights and prune to \(n'_s\) insights for final judge verification. This results in a branching tree structure where high-quality paths are preserved and low-quality branches are eliminated at each stage.
                     </p>
 
                     <h4 class="text-xl font-semibold mb-4 text-gray-800">Stage-local Evaluators</h4>
                     <p class="mb-6">
-                        To enable stage-wise pruning, we design specialized evaluators for each intermediate stage that assess output quality without requiring the full pipeline to complete. Specifically, we employ: (1) a <strong>metadata judger</strong> that evaluates the quality and comprehensiveness of data profiling outputs, scoring attributes such as completeness, relevance, and statistical validity; (2) a <strong>visualization judger</strong> that assesses chart quality based on visual clarity, appropriate chart type selection, and effective data encoding; and (3) the <strong>insight judger</strong> (our harsh judge from RQ1) that evaluates the final insight quality. These stage-local evaluators allow us to make informed pruning decisions at each stage without waiting for downstream outputs.
+                        Each pruning decision is guided by an LLM-based judger tailored to its stage: a <strong>metadata judger</strong> ranks metadata reports, a <strong>visualization judger</strong> ranks directions of visual charts, and an <strong>insight judger</strong> ranks drafted insights. This process-level allocation reduces the accumulation of judging noise across time and yields more stable scaling behavior under fixed budget.
                     </p>
 
                     <h4 class="text-xl font-semibold mb-4 text-gray-800">LLM Call-Based Budget Control</h4>
@@ -386,7 +694,7 @@
                     </div>
 
                     <p class="mb-4">
-                        Here, \(p_v \in [0,1]\) denotes the chart verification pass probability—the expected rate at which generated visualizations pass quality checks. The term \(p_v n'_s\) represents the expected number of verified charts among \(n'_s\) attempted visualizations per retained meta-report. The indicator function \(\mathbb{I}[\rho>0]\) equals 1 when pruning is applied (\(\rho > 0\)) and 0 otherwise. The expected budget has asymptotic complexity \(\mathcal{O}(p_v {n'_s}^3)\) for generation and \(\mathcal{O}(\mathbb{I}[\rho>0] \cdot p_v {n'_s}^2)\) for pruning overhead, where \(n'_s = \max(1, \lceil(1-\rho) \cdot b_s\rceil)\) denotes the number of surviving branches after pruning at stage \(s\).
+                        As mentioned above, \(p_v \in [0,1]\) denotes the expected rate at which generated visualizations pass quality checks. The term \(p_v n'_s\) represents the expected number of verified charts among \(n'_s\) attempted visualizations per retained meta-report. The indicator function \(\mathbb{I}[\rho>0]\) equals 1 when pruning is applied (\(\rho > 0\)) and 0 otherwise. The expected budget has asymptotic complexity \(\mathcal{O}(p_v {n'_s}^3)\) for generation and \(\mathcal{O}(\mathbb{I}[\rho>0] \cdot p_v {n'_s}^2)\) for pruning overhead, where \(n'_s = \max(1, \lceil(1-\rho) \cdot b_s\rceil)\) denotes the number of surviving branches after pruning at stage \(s\).
                     </p>
 
                     <p class="mb-4">
@@ -596,374 +904,6 @@
         </div>
     </div>
 
-    <!-- Report Examples from Additional Datasets -->
-    <div class="py-12 md:py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <h3 class="text-2xl font-bold mb-6 text-gray-900">Report Examples from Additional Datasets</h3>
-            <p class="mb-8 text-gray-700">
-                To demonstrate the generalizability of Selective TTS, we evaluate our approach on four additional tabular datasets spanning diverse domains: <a href="https://www.kaggle.com/datasets/mosapabdelhany/medical-insurance-cost" target="_blank" class="text-blue-600 hover:underline">Medical Insurance</a>, <a href="https://www.kaggle.com/datasets/akshaydattatraykhare/diabetes-dataset" target="_blank" class="text-blue-600 hover:underline">Diabetes</a>, <a href="https://www.kaggle.com/datasets/ayeshausmani/customer-shopping-behavior-dataset" target="_blank" class="text-blue-600 hover:underline">Customer Shopping Behavior</a>, and <a href="https://www.kaggle.com/datasets/usamabuttar/world-happiness-report-2005-present" target="_blank" class="text-blue-600 hover:underline">World Happiness Report</a>. Below, we showcase all generated high-quality insights from our pipeline across these datasets, demonstrating consistent quality and diverse analytical perspectives.
-            </p>
-
-            <style>
-                .dataset-examples-grid {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 20px;
-                    margin-top: 20px;
-                }
-
-                .example-card-compact {
-                    border: 1px solid #e5e7eb;
-                    border-radius: 8px;
-                    overflow: hidden;
-                    background: #fff;
-                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-                    transition: transform 0.2s, box-shadow 0.2s;
-                }
-
-                .example-card-compact:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                }
-
-                .example-card-content {
-                    display: flex;
-                    flex-direction: row;
-                }
-
-                .example-image-container {
-                    flex: 0 0 45%;
-                    padding: 12px;
-                    background: #f9fafb;
-                }
-
-                .example-image-container img {
-                    width: 100%;
-                    height: auto;
-                    display: block;
-                    border-radius: 4px;
-                }
-
-                .example-text-container {
-                    flex: 1;
-                    padding: 12px 16px;
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .example-text-container p {
-                    margin: 0;
-                    font-size: 13px;
-                    line-height: 1.5;
-                    color: #4b5563;
-                    overflow-y: auto;
-                    max-height: 200px;
-                }
-
-                @media (max-width: 1200px) {
-                    .dataset-examples-grid {
-                        grid-template-columns: 1fr;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .example-card-content {
-                        flex-direction: column;
-                    }
-
-                    .example-image-container {
-                        flex: 0 0 auto;
-                        width: 100%;
-                    }
-                }
-            </style>
-
-            <!-- Medical Insurance Dataset -->
-            <div class="mb-16">
-                <h4 class="text-xl font-semibold mb-4 text-gray-800 border-l-4 border-blue-500 pl-4">Medical Insurance Dataset</h4>
-                <p class="mb-4 text-gray-700 text-sm italic">
-                    The <a href="https://www.kaggle.com/datasets/mosapabdelhany/medical-insurance-cost" target="_blank" class="text-blue-600 hover:underline">Medical Insurance dataset</a> contains patient attributes (age, BMI, smoking status, number of children) and associated insurance charges, enabling analysis of cost drivers in healthcare.
-                </p>
-                <div class="dataset-examples-grid">
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Insurance/top1.png" alt="Insurance Insight 1">
-                            </div>
-                            <div class="example-text-container">
-                                <p>Children show negligible correlation with both age (~0.04) and BMI (~0.01), reinforcing the notion that family size is not a dominant factor in determining medical charges compared to age or BMI. This lack of correlation across demographic attributes highlights the nuanced nature of medical cost drivers, where socioeconomic factors or other unmeasured variables may play a larger role in determining charges. For healthcare administrators, understanding these independence relationships is critical when designing bundled payment models or risk-adjustment mechanisms, as reliance on poorly correlated predictors like children would likely lead to inaccurate cost projections.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Insurance/top8.png" alt="Insurance Insight 8">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The age distribution of insured individuals is skewed towards younger demographics, particularly those in their early twenties, where frequencies reach their peak (~160). This observation suggests that younger age groups may be more actively seeking insurance coverage compared to older individuals. However, this also raises concerns regarding the potential imbalance in risk pooling, as older individuals, who are typically associated with higher risk profiles, are underrepresented in the insured population. Insurance providers should consider revising their outreach strategies to engage and retain older demographics, possibly through tailored offerings or education campaigns.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Insurance/top31.png" alt="Insurance Insight 31">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The chart reveals a significant difference in the relationship between BMI and medical charges for smokers versus non-smokers. The trend lines show that for individuals who smoke, there is a much steeper positive correlation between BMI and charges compared to non-smokers. Non-smokers exhibit a relatively flat trend with minimal changes in charges across different BMIs. In contrast, smokers experience a marked increase in charges as BMI rises, suggesting that both smoking status and BMI have compounding effects on healthcare costs. This insight highlights the need for targeted interventions for smokers, especially those with higher BMIs.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Insurance/top36.png" alt="Insurance Insight 36">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The chart reveals a complex relationship between age and medical charges, characterized by a general upward trend but also significant variability across different age groups. For ages below 40 years, the spread of medical charges is relatively narrow, indicating a more homogeneous population. However, beyond 40 years, the spread widens significantly, particularly around the 50-60 age range, where there is a marked cluster of higher charges. This suggests that health complications may become more common in this age group. Given this variability, healthcare providers should consider targeted interventions for older adults.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Insurance/top42.png" alt="Insurance Insight 42">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The pronounced skewness in the distribution of medical charges for smokers, particularly towards the higher end, suggests that smoking may disproportionately impact healthcare costs for a smaller subset of individuals. The long right tail indicates that while some smokers experience relatively normal healthcare expenses, others encounter extremely high costs due to smoking-related complications. This skewed distribution highlights the need for differentiated healthcare approaches, where high-risk smokers are prioritized for more intensive interventions and support.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Insurance/top57.png" alt="Insurance Insight 57">
-                            </div>
-                            <div class="example-text-container">
-                                <p>There is a significant upward trend in medical charges as age increases, suggesting that healthcare costs rise systematically with age. This trend is evident from the scattered data points clustering more densely along an upward trajectory that aligns with the fitted regression line. While there are individual variations, particularly among younger age groups, the overall direction of the trend is consistent across both male and female populations. This insight suggests that older individuals may require more intensive or frequent medical interventions, leading to higher expenses.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Diabetes Dataset -->
-            <div class="mb-16">
-                <h4 class="text-xl font-semibold mb-4 text-gray-800 border-l-4 border-red-500 pl-4">Diabetes Dataset</h4>
-                <p class="mb-4 text-gray-700 text-sm italic">
-                    The <a href="https://www.kaggle.com/datasets/akshaydattatraykhare/diabetes-dataset" target="_blank" class="text-blue-600 hover:underline">Diabetes dataset</a> includes clinical measurements (glucose concentration, blood pressure, insulin level, BMI) and diabetes status indicators for examining health risk factors.
-                </p>
-                <div class="dataset-examples-grid">
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/diabetes/top1.png" alt="Diabetes Insight 1">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The DiabetesPedigreeFunction exhibits a notably low correlation with most features, including Glucose (0.14), BloodPressure (0.041), SkinThickness (0.18), Insulin (0.19), and BMI (0.14). This finding implies that family history or genetic susceptibility to diabetes does not strongly predict other physiological characteristics commonly associated with diabetes onset. This may suggest that environmental or lifestyle factors play a more dominant role than genetics in modulating these traits. Public health initiatives could prioritize lifestyle interventions, such as diet and exercise, even in individuals with a positive family history.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/diabetes/top20.png" alt="Diabetes Insight 20">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The sharp increase in insulin levels observed in Outcome 1 around age 60 suggests a significant metabolic shift that could indicate the onset of severe diabetic complications. This peak, exceeding 400 units, stands out as an anomaly compared to the consistent trend in Outcome 0, where insulin levels remain relatively stable. The dramatic spike likely reflects heightened insulin resistance or hyperglycemia, conditions commonly associated with advanced diabetes progression. This finding suggests that individuals with Outcome 1 may benefit from more intensive monitoring and intervention during this critical period.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/diabetes/top28.png" alt="Diabetes Insight 28">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The chart illustrates a substantial overlap in insulin levels between 'Outcome 0' and 'Outcome 1' across various age groups. While there is a discernible separation in younger age groups, the lines for both outcomes become increasingly indistinguishable as age progresses. This overlap becomes particularly pronounced in the 50+ age range, where data points from both groups cluster around very low insulin levels. The lack of clear differentiation between outcomes later in life may suggest that age outweighs other distinguishing factors, potentially indicating shared physiological processes.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/diabetes/top35.png" alt="Diabetes Insight 35">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The scatter plot reveals a positive correlation between BMI and Glucose levels for individuals across both outcomes. As BMI increases, there is a general upward trend in glucose levels, suggesting that higher body mass index is likely associated with higher blood sugar levels. This trend is evident through the distribution of data points, which cluster more densely along the upper-right quadrant. This insight implies that interventions targeting weight management may play a crucial role in managing glucose levels, particularly for populations at risk of developing glucose-related health issues.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/diabetes/top37.png" alt="Diabetes Insight 37">
-                            </div>
-                            <div class="example-text-container">
-                                <p>Glucose shows moderate correlations with several features: BMI (0.22), BloodPressure (0.15), and Insulin (0.33). This pattern indicates that glucose levels are influenced by a combination of body composition and metabolic activity. The presence of these correlations may highlight the complex interplay between lifestyle factors and physiological responses. For instance, interventions aimed at reducing BMI and managing BloodPressure might indirectly help stabilize glucose levels in pre-diabetic populations. Further studies could investigate whether a multi-faceted approach addressing all correlated factors leads to more effective glucose control.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/diabetes/top48.png" alt="Diabetes Insight 48">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The relationship between glucose and insulin levels across the outcomes reveals an indirect linkage tied to metabolic health. While glucose levels differ sharply between outcomes 0 and 1, insulin levels also exhibit a distinct pattern indicative of different physiological states. For outcome 0, the low insulin levels coupled with relatively normal glucose suggest a lack of metabolic stress. Conversely, the high insulin levels in outcome 1, even though glucose levels are elevated, imply compensatory insulin secretion possibly to counteract insulin resistance. Healthcare providers could implement strategies to assess insulin sensitivity concurrently with glucose monitoring.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Shopping Behavior Dataset -->
-            <div class="mb-16">
-                <h4 class="text-xl font-semibold mb-4 text-gray-800 border-l-4 border-green-500 pl-4">Customer Shopping Behavior Dataset</h4>
-                <p class="mb-4 text-gray-700 text-sm italic">
-                    The <a href="https://www.kaggle.com/datasets/ayeshausmani/customer-shopping-behavior-dataset" target="_blank" class="text-blue-600 hover:underline">Customer Shopping Behavior dataset</a> captures retail transaction data including product categories, purchase amounts, customer segments, and seasonal patterns.
-                </p>
-                <div class="dataset-examples-grid">
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Shopping/top7.png" alt="Shopping Insight 7">
-                            </div>
-                            <div class="example-text-container">
-                                <p>Clothing demonstrates a cyclical trend in popularity across seasons, peaking in Spring and rebounding in Winter. In Spring, the total purchase amount for clothing surpasses $27,000, indicating its seasonal demand spike. After declining in Summer to around $23,000, there's a noticeable recovery in Fall, hovering close to $26,000, followed by another peak in Winter nearing the Spring levels. This cyclicality likely reflects consumer behavior driven by seasonal fashion changes. Retailers may consider increasing inventory and marketing efforts during Spring and Winter to capitalize on this peak demand.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Shopping/top9.png" alt="Shopping Insight 9">
-                            </div>
-                            <div class="example-text-container">
-                                <p>Footwear demand exhibits noticeable seasonal variation, showing higher purchases in Summer (160) and Spring (163), compared to Fall (136) and Winter (140). This suggests that warmer seasons may trigger increased demand for lighter footwear types. Retailers might consider adjusting inventory levels or launching promotions during the warmer months to maximize sales. Conversely, the relatively lower demand in colder seasons may signal the need for different marketing strategies focused on winter boots or heavier footwear options.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Shopping/top11.png" alt="Shopping Insight 11">
-                            </div>
-                            <div class="example-text-container">
-                                <p>Summer has the lowest average review rating at approximately 3.71, suggesting it might be the most challenging season for maintaining customer satisfaction. This dip could stem from factors like intense competition, user fatigue, or a shift in consumer priorities during the warmer months. Given that summer marks a notable low compared to other seasons, the company might benefit from conducting seasonal analyses to pinpoint the exact causes. Actions like implementing summer-exclusive features or offering seasonal discounts could help lift ratings closer to other seasons' benchmarks.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Shopping/top35.png" alt="Shopping Insight 35">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The payment method landscape indicates a competitive environment among the top four methods—Credit Card, PayPal, Cash, and Debit Card—all contributing approximately 17%-18% of total sales. This close parity suggests that customers have diverse preferences, making it critical for businesses to maintain flexibility in their payment options. Given the similarity in usage across these methods, marketing strategies should focus on enhancing user experience and incentives across multiple platforms to capture a larger share of customer preference.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Shopping/top46.png" alt="Shopping Insight 46">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The seasonal sales trend reveals a significant peak during Fall, where the total purchase amount reaches its highest point at approximately $60,000. This peak is roughly $4,000 higher than the next highest season (Winter). The sharp drop observed between Spring and Summer, followed by a substantial rise from Summer to Fall, suggests that consumer spending behavior may be heavily influenced by seasonal factors such as holiday shopping or changes in purchasing habits. Retailers could leverage this insight by intensifying marketing campaigns ahead of Fall.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Shopping/top49.png" alt="Shopping Insight 49">
-                            </div>
-                            <div class="example-text-container">
-                                <p>Bank transfers exhibit a periodic pattern, with usage peaking during the bi-weekly and quarterly purchase intervals. These intervals show higher scores (88 and 109, respectively) compared to monthly and weekly intervals. This cyclical behavior may reflect structured payment cycles where consumers prefer bank transfers for routine financial planning. Businesses could leverage this by offering bank transfer discounts during these intervals, potentially increasing transaction volumes by appealing to customers with structured purchasing habits.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- World Happiness Dataset -->
-            <div class="mb-16">
-                <h4 class="text-xl font-semibold mb-4 text-gray-800 border-l-4 border-yellow-500 pl-4">World Happiness Report Dataset</h4>
-                <p class="mb-4 text-gray-700 text-sm italic">
-                    The <a href="https://www.kaggle.com/datasets/usamabuttar/world-happiness-report-2005-present" target="_blank" class="text-blue-600 hover:underline">World Happiness Report dataset</a> aggregates country-level indicators including GDP per capita, social support, healthy life expectancy, freedom, generosity, and corruption perception.
-                </p>
-                <div class="dataset-examples-grid">
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Happiness/top3.png" alt="Happiness Insight 3">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The heatmap reveals a strong positive correlation between 'Log GDP Per Capita' and both 'Social Support' and 'Healthy Life Expectancy At Birth,' with correlation coefficients of 0.68 and 0.82, respectively. This suggests that higher income levels within a country are closely linked to enhanced social support systems and better health outcomes. The relatively moderate positive correlation with 'Freedom To Make Life Choices' (0.37) indicates that economic prosperity may also contribute to personal freedoms. However, the lack of significant correlation with 'Generosity' (-0.00) could suggest that wealth alone does not necessarily translate to increased generosity.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Happiness/top5.png" alt="Happiness Insight 5">
-                            </div>
-                            <div class="example-text-container">
-                                <p>There appears to be a diminishing marginal return effect of GDP on happiness as we move to higher GDP per capita levels. While the red regression line shows a positive correlation, the slope begins to flatten as the Log GDP Per Capita increases toward the right end of the x-axis. This observation aligns with the concept of the 'Easterlin Paradox,' which posits that beyond a certain level of affluence, further economic gains do not substantially improve subjective well-being. Policymakers should focus on ensuring equitable distribution of wealth rather than solely pursuing economic growth.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Happiness/top7.png" alt="Happiness Insight 7">
-                            </div>
-                            <div class="example-text-container">
-                                <p>There is a negative correlation between perceptions of corruption and confidence in the national government, as indicated by the concentration of high-density areas towards the bottom-right and top-left quadrants of the heatmap. As the perceptions of corruption increase, confidence in the government decreases, and vice versa. This suggests that public perception of corruption significantly influences trust levels in governance. Policymakers should focus on implementing transparent anti-corruption measures to restore public trust, using interventions targeted at regions with high corruption perceptions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Happiness/top30.png" alt="Happiness Insight 30">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The data demonstrates a non-linear drop in confidence as perceptions of corruption rise. While the decline is gradual at lower corruption levels (below 0.3), the rate of decline accelerates significantly once perceptions exceed 0.5. This sharp decrease suggests that public tolerance for corruption has a threshold beyond which confidence rapidly diminishes. Policymakers should therefore focus intensively on preventing corruption from crossing this threshold to avoid sudden trust collapses. Developing early detection systems and rapid response mechanisms for emerging corruption could be key strategies.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Happiness/top38.png" alt="Happiness Insight 38">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The Negative Affect distribution exhibits a steep decline in frequency beyond a score of 0.3. This sharp drop-off suggests that as affect scores increase, the likelihood of experiencing negative emotions decreases substantially, indicating a potential 'ceiling effect' for negative affect at higher scores. Public health campaigns focused on improving overall well-being might aim to guide individuals towards achieving affect scores above 0.3, as doing so seems to correlate with a marked reduction in negative emotional experiences. Strategic initiatives could measure success by tracking the shift in mean affect scores moving above this critical threshold.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="example-card-compact">
-                        <div class="example-card-content">
-                            <div class="example-image-container">
-                                <img src="img/Happiness/top54.png" alt="Happiness Insight 54">
-                            </div>
-                            <div class="example-text-container">
-                                <p>The correlation matrix shows that 'Social Support' has moderately strong positive correlations with 'Life Ladder' (0.72) and 'Log GDP Per Capita' (0.68), suggesting that social cohesion and support systems contribute to both subjective well-being and economic prosperity. However, the relatively weak correlation with 'Generosity' (0.07) raises questions about whether social support independently drives charitable behavior. A potential strategy could involve local governments investing in community-building initiatives, aiming to boost social support scores by 30% within five years, thereby exploring indirect pathways to influence generosity.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="mt-8 text-gray-700">
-                These 24 examples across four diverse datasets illustrate that Selective TTS consistently generates high-quality, chart-grounded insights across heterogeneous domains, demonstrating its robustness and generalizability beyond the VIS Publication dataset used in our main experiments. Each insight demonstrates deep analytical reasoning, specific numerical evidence, and actionable recommendations tailored to the domain.
-            </p>
-        </div>
-    </div>
-
     <!-- Conclusion Section -->
     <div class="bg-gray-50 py-12 md:py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
@@ -1037,7 +977,7 @@
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 py-8">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 University of Minnesota NLP Lab. All rights reserved.</p>
+            <p>&copy; 2025 Minnesota NLP Lab, University of Minnesota. All rights reserved.</p>
             <div class="mt-4 flex justify-center gap-6">
                 <a href="https://github.com/minnesotanlp" target="_blank" class="hover:text-blue-600 transition">
                     <i class="fab fa-github text-xl"></i>
