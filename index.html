@@ -1288,7 +1288,7 @@
 
                     <h3 class="text-2xl font-bold mb-6 text-gray-900 mt-12">Quantitative Analysis</h3>
                     <p class="mb-6">
-                        Figure below presents our main experimental findings across three dimensions: quality-variance trade-off (left), score distribution across all generated reports (middle), and compute-quality efficiency (right). The results demonstrate that Selective TTS with moderate pruning (\(\rho = 0.6\)) achieves the best balance, reaching a peak average score of <strong>65.86 ± 8.16</strong> compared to the baseline's <strong>61.64 ± 13.36</strong>. This represents a gain of 4.5 points while simultaneously reducing variance by 38%.
+                        Figure below presents our main experimental findings across three dimensions: quality-variance trade-off (left), score distribution across all generated reports (middle), and compute-quality efficiency (right). The results demonstrate that Selective TTS with moderate pruning (\(\rho = 0.6\)) achieves the best balance, reaching a peak average score of <strong>65.86 ± 8.16</strong> compared to the baseline's <strong>61.64 ± 13.36</strong>. This represents a gain of 4.5 points while simultaneously reducing variance by 39%.
                     </p>
 
                     <!-- Three figures side by side -->
@@ -1382,7 +1382,7 @@
 
                     <h3 class="text-2xl font-bold mb-6 text-gray-900 mt-12">Qualitative Analysis</h3>
 
-                    <h6 class="text-base font-semibold mb-3 text-gray-800 mt-6">Representative Examples at \(\rho = 0.6\)</h6>
+                    <h4 class="text-xl font-semibold mb-4 text-gray-800 mt-8">Representative Examples at \(\rho = 0.6\)</h4>
                     <p class="mb-4">
                         Below we present three representative reports generated under the optimal pruning ratio \(\rho = 0.6\), ranging from low to high quality as scored by our harsh judge. Each report consists of a visualization paired with textual insights. The examples illustrate how report quality varies along the score spectrum.
                     </p>
@@ -1446,10 +1446,10 @@
                     </p>
 
                     <p class="mb-6">
-                        Increasing \(\rho\) generally improves overall report quality. Even low-scoring reports at \(\rho = 0.8\) are more coherent and analytical than those at smaller \(\rho\). High-scoring reports become similarly informative while remaining diverse in perspective. For instance, \(\rho = 0.8\) focuses on citation discrepancies, whereas \(\rho = 0.4\) highlights anomalies in paper length.
+                        Increasing \(\rho\) generally improves overall report quality. Even low-scoring reports at \(\rho = 0.8\) are more coherent and analytical than those at smaller \(\rho\). High-scoring reports become similarly informative while remaining diverse in perspective.
                     </p>
 
-                    <h6 class="text-base font-semibold mb-3 text-gray-800">Human Annotation and Pairwise Ranking</h6>
+                    <h4 class="text-xl font-semibold mb-4 text-gray-800 mt-8">Human Annotation and Pairwise Ranking</h4>
                     <p class="mb-4">
                         We collected pairwise quality preferences from four expert annotators across reports sampled from different pruning ratios. The figure below shows mean annotator rankings, revealing that human preferences increasingly converge for the highest-ranked reports as pruning ratio increases.
                     </p>
@@ -1489,16 +1489,18 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Citation</h2>
             <div class="bg-gray-50 rounded-lg shadow-sm p-8">
-                <p class="text-gray-700 mb-4 text-center">
+                <!-- <p class="text-gray-700 mb-4 text-center">
                     If you find our work useful, please consider citing:
-                </p>
+                </p> -->
                 <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
-                    <pre class="text-gray-100 text-sm font-mono"><code>@inproceedings{gan2025scaling,
-  title={Towards Scaling Unverifiable Rewards: A Case Study on Visual Insights},
-  author={Gan, Shuyu and Mooney, James and Hao, Pan and Wang, Renxiang and Hong, Mingyi and Wang, Qianwen and Kang, Dongyeop},
-  booktitle={ACL Rolling Review},
-  year={2025},
-  url={https://openreview.net/forum?id=3eTVebmmn8}
+                    <pre class="text-gray-100 text-sm font-mono"><code>@misc{gan2025scalingunverifiablerewardscase,
+      title={Scaling Unverifiable Rewards: A Case Study on Visual Insights}, 
+      author={Shuyu Gan and James Mooney and Pan Hao and Renxiang Wang and Mingyi Hong and Qianwen Wang and Dongyeop Kang},
+      year={2025},
+      eprint={2512.22650},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2512.22650}, 
 }</code></pre>
                 </div>
                 <div class="mt-4 text-center">
